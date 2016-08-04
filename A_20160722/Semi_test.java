@@ -5,79 +5,41 @@ import java.util.Scanner;
 public class Semi_test {
 
 	public static void main(String[] args) {
+		System.out.println("HackerEarth Semi Test");
+		Scanner input = new Scanner(System.in);
 
-		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt();
-		int arryN[] = new int[N];
+		int T = input.nextInt();
+		int tArry[] = new int[T];
+		String tArry2[] = new String[T];
 
-		for (int i = 0; i < N; i++) {
-			arryN[i] = sc.nextInt();
+		for (int i = 0; i < T; i++) {
+			tArry[i] = i + 1;
+
+			if ((i + 1) % 5 == 0) {
+				tArry[i] = 5;
+			}
+			if ((i + 1) % 3 == 0) {
+				tArry[i] = 3;
+			}
+			if ((i + 1) % 15 == 0) {
+				tArry[i] = 0;
+			}
+			tArry2[i] = Integer.toString(tArry[i]);
 		}
 
-		int arryT1[] = new int[arryN[0]];
-		String arryT11[] = new String[arryN[0]];
-		int arryT2[] = new int[arryN[1]];
-		String arryT22[] = new String[arryN[1]];
+		for (int i = 0; i < T; i++) {
 
-		for (int i = 0; i < arryT1.length; i++) {
-			arryT1[i] = i + 1;
-
-			if ((arryT1[i] % 3) == 0) {
-				arryT1[i] = 0;
+			if ((i + 1) % 5 == 0) {
+				tArry2[i] = "Buzz";
 			}
-			
-			  if((arryT1[i]%5) ==0){ arryT1[i] = 0; }
-			 
+			if ((i + 1) % 3 == 0) {
+				tArry2[i] = "Fizz";
+			}
+			if ((i + 1) % 15 == 0) {
+				tArry2[i] = "Fizz Buzz";
+			}
+			System.out.println(tArry2[i]);
 		}
-
-		for (int i = 0; i < arryT11.length; i++) {
-			arryT11[i] = Integer.toString(arryT1[i]);
-			if ((arryT11[i] == "0")) {
-				arryT11[i] = "Fizz";
-			}
-
-			if (arryT11[i] == "0") {
-				arryT11[i] = "Buzz";
-			}
-
-		}
-
-		System.out.println();
-
-		for (int i = 0; i < arryT2.length; i++) {
-			arryT2[i] = i + 1;
-			if ((arryT2[i] % 3) == 0) {
-				arryT2[i] = 0;
-			}
-
-			if ((arryT2[i] % 5) == 0) {
-				arryT2[i] = 0;
-			}
-		}
-
-		for (int i = 0; i < arryT22.length; i++) {
-			arryT22[i] = Integer.toString(arryT2[i]);
-			if ((arryT22[i] == "0")) {
-				arryT22[i] = "Fizz";
-			}
-
-			if (arryT22[i] == "0") {
-				arryT22[i] = "Buzz";
-			}
-			System.out.println(arryT22[i]);
-		}
-
-		for (int i = 0; i < arryT11.length; i++) {
-			System.out.println(arryT11[i]);
-		}
-
-		for (int i = 0; i < arryT22.length; i++) {
-			System.out.println(arryT22[i]);
-		}
-
-		arryT22[14] = "Buzz";
-
-		sc.close();
-
+		input.close();
 	}
 }
